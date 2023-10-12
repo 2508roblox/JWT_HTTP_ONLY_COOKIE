@@ -13,7 +13,7 @@ const authUser = asyncHandler(async (req, res) => {
   if (authUser && (await authUser.matchPassword(password))) {
   
    await generateToken(res, authUser._id)
-  
+  // lưu vào res gửi cho client, lần req tiếp theo lấy jwt trong req
     res.status(201).json({
       _id: authUser._id,
       name: authUser.name,
