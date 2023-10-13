@@ -9,7 +9,7 @@ import Header from "./components/Header";
 import Layout from "./layouts/Layout";
 import LoginScreen from "./pages/LoginScreen";
 import RegisterScreen from "./pages/RegisterScreen";
-
+import Private from "./components/Private";
 function App() {
   return (
     <>
@@ -20,6 +20,10 @@ function App() {
         </Route>
         <Route path="/login" element={<LoginScreen />} /> 
         <Route path="/register" element={<RegisterScreen />} /> 
+        {/* Private Route */}
+        <Route path=""  element={<Private></Private>} >
+            <Route path="/profile" element={<ProfileScreen /> }></Route>
+        </Route>
       </Routes>
     </>
   );
